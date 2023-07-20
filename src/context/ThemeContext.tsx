@@ -8,13 +8,13 @@ export function ThemeProvider({
 }:{
   children: React.ReactNode
 }) {
-  const [isDarkThemeActive, setIsDarkThemeActive] = useState(false);
+  const [darkThemeIsActive, setDarkThemeIsActive] = useState(false);
   const htmlTag = document.querySelector('html')!;
   const dayThemeButton = document.querySelector('div.light');
   const nightThemeButton = document.querySelector('div.dark');
   
   useEffect(() => {
-    if (isDarkThemeActive) {
+    if (darkThemeIsActive) {
       htmlTag.className = 'dark';
       dayThemeButton?.classList.add('hide');
       nightThemeButton?.classList.remove('hide');
@@ -23,12 +23,12 @@ export function ThemeProvider({
       dayThemeButton?.classList.remove('hide');
       nightThemeButton?.classList.add('hide');
     }
-  }, [isDarkThemeActive]);
+  }, [darkThemeIsActive]);
 
   function toggleTheme(){ 
-    const changeTheme = !isDarkThemeActive;
-    setIsDarkThemeActive(changeTheme);
-    console.log(isDarkThemeActive)
+    const changeTheme = !darkThemeIsActive;
+    setDarkThemeIsActive(changeTheme);
+    console.log(darkThemeIsActive)
   }
 
   return (
