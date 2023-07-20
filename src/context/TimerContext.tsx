@@ -7,7 +7,6 @@ export function TimerProvider({ children }: { children: React.ReactNode }) {
     const [minutes, setMinutes] = useState(10);
     const [seconds, setSeconds] = useState(0);
     const [countdownIsActive, setCountdownIsActive] = useState(false);
-
     let countdownTimeout: number;
     const countdownIsFinished = minutes == 0 && seconds == 0;
 
