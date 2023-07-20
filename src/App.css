@@ -13,19 +13,25 @@
   cursor: pointer;
 }
 
-#timer {
+#countdownTimer {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   width: 100%;
 }
 
-#timer span {
+#countdownTimer span {
   font-size: 12.6rem;
 }
 
-#timer .controllers {
+#countdownTimer .controllers {
   display: flex;
   gap: 3rem;
+}
+
+#countdownTimer .start:hover svg path,
+#countdownTimer .stop:hover svg path,
+#countdownTimer .add:hover svg path,
+#countdownTimer .remove:hover svg path {
+  fill: rgb(62, 162, 196);
 }
