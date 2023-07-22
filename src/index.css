@@ -3,7 +3,7 @@
 
   --bg-color: hsla(var(--hue), 0%, 100%, 1);
   --bg-audio: hsla(var(--hue), 10%, 90%, 1);
-  --bg-audio-active: #2493b4;
+  --bg-audio-active: #2bb2db;
 
   --hue: 240;
 
@@ -92,6 +92,10 @@ button {
     gap: 3rem;
   }
 
+  #quotes {
+    gap: 2rem;
+  }
+
   #audio {
     gap: 2rem;
   }
@@ -128,11 +132,21 @@ button {
     font-size: 8.6rem;
   }
 
+  #quotes {
+    margin-top: -20%;
+  }
+
   #audio {
     gap: 1.5rem;
   }
 
   #audio button {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #quotes {
+    margin-top: -40%;
   }
 }

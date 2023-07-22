@@ -5,6 +5,65 @@
   text-align: center;
 }
 
+#theme {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+  cursor: pointer;
+}
+
+#theme .light:hover svg path,
+#theme .dark:hover svg path {
+  fill: rgb(62, 162, 196);
+}
+
+#countdownTimer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#countdownTimer span {
+  font-size: 12.6rem;
+}
+
+#countdownTimer .controllers {
+  display: flex;
+  gap: 3rem;
+}
+
+#countdownTimer .start:hover svg path,
+#countdownTimer .stop:hover svg path,
+#countdownTimer .add:hover svg path,
+#countdownTimer .remove:hover svg path {
+  fill: rgb(62, 162, 196);
+}
+
+#quotes {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+
+.marianoButton {
+  animation: heartbeat 5s infinite;
+}
+
+.quote-text {
+  position: relative; 
+  background-image: url("assets/quotation-marks.png");
+  background-repeat: no-repeat;
+  background-size: 3rem;
+  background-position: left center;
+  font-size: 1.7rem;
+  padding: 4rem;
+}
+
+
 #audio {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,8 +75,9 @@
   flex-direction: column;
   align-items: center;
   background-color: var(--bg-audio);
+  border: solid rgb(119, 118, 118);
   border-radius: 2.4rem;
-  gap: 3.2rem;
+  gap: 2rem;
   padding: 4.8rem;
   transition: filter 700ms;
 }
@@ -58,38 +118,24 @@
   background-color: #0A3442;
 }
 
-#countdownTimer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.75);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.75);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(0.75);
+  }
 }
 
-#countdownTimer span {
-  font-size: 12.6rem;
-}
-
-#countdownTimer .controllers {
-  display: flex;
-  gap: 3rem;
-}
-
-#countdownTimer .start:hover svg path,
-#countdownTimer .stop:hover svg path,
-#countdownTimer .add:hover svg path,
-#countdownTimer .remove:hover svg path {
-  fill: rgb(62, 162, 196);
-}
-
-#theme {
-  position: absolute;
-  top: 6rem;
-  right: 6rem;
-  cursor: pointer;
-
-}
-
-#theme .light:hover svg path,
-#theme .dark:hover svg path {
-  fill: rgb(62, 162, 196);
-}
