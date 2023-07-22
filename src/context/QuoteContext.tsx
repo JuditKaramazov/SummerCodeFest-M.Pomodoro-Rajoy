@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { QuotesContextProps } from '../types/context/quote';
+import { QuotesContextProps, Quote } from '../types/context/quote';
 import quotes from '../data/quotes.json';
 
 const initialQuotesContext: QuotesContextProps = {
@@ -8,8 +8,8 @@ const initialQuotesContext: QuotesContextProps = {
 
 export const QuotesContext = createContext<QuotesContextProps>(initialQuotesContext);
 
-export const QuotesProvider: React.FC = ({ children }) => {
-  const [quotes] = useState<string[]>(initialQuotesContext.quotes);
+export const QuotesProvider: React.FC = () => {
+  const [quotes] = useState<Quote[]>(initialQuotesContext.quotes);
 
-  return <QuotesContext.Provider value={{ quotes }}>{children}</QuotesContext.Provider>;
+  return <QuotesContext.Provider value={{ quotes }} />;
 };

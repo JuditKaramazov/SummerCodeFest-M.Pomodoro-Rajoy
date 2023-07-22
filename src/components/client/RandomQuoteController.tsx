@@ -6,12 +6,12 @@ import marianoButton from '../../assets/mariano-button.png';
 
 const RandomQuoteButton: React.FC = () => {
   const { quotes } = useContext(QuotesContext);
-  const [randomQuote, setRandomQuote] = useState<{ text: string }>({ text: '' });
+  const [randomQuote, setRandomQuote] = useState<string>('');
 
   const handleRandomQuoteClick = () => {
     const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
     const selectedRandomQuote = quotes[randomQuoteIndex];
-    setRandomQuote(selectedRandomQuote);
+    setRandomQuote(selectedRandomQuote.text);
   };
 
   return (
@@ -24,7 +24,7 @@ const RandomQuoteButton: React.FC = () => {
           alt="Mariano Rajoy visual."
         />
       </button>
-      {randomQuote.text && <p className="quote-text">{randomQuote.text}</p>}
+      {randomQuote && <p className="quote-text">{randomQuote}</p>}
     </div>
   );
 };
