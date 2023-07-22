@@ -2,7 +2,7 @@
   font-size: 60.5%;
 
   --bg-color: hsla(var(--hue), 0%, 100%, 1);
-  --bg-audio: hsla(var(--hue), 9%, 89%, 1);
+  --bg-audio: hsla(var(--hue), 10%, 90%, 1);
   --bg-audio-active: #2493b4;
 
   --hue: 240;
@@ -12,19 +12,32 @@
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   height: 100vh;
   display: grid;
-  place-content: center;
-  font-family: var(--ff-primary);
-  font-size: 1.6rem;
   color: var(--tt-color-primary);
   background-color: var(--bg-color);
+  font-family: var(--ff-primary);
+  font-size: 1.6rem;
+  place-content: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  bottom: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%233EA2C4' fill-opacity='1' d='M0,224L34.3,186.7C68.6,149,137,75,206,37.3C274.3,0,343,0,411,21.3C480,43,549,85,617,101.3C685.7,117,754,107,823,117.3C891.4,128,960,160,1029,154.7C1097.1,149,1166,107,1234,112C1302.9,117,1371,171,1406,197.3L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: auto;
+  z-index: -1;
 }
 
 ::selection {
@@ -34,9 +47,9 @@ body {
 
 main {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 20rem;
-  grid-template-columns: 1fr 1fr;
 }
 
 button {
@@ -50,8 +63,8 @@ button {
 }
 
 .dark body {
-  background: #1e1e20;
   color: rgb(243, 226, 226);
+  background: #1e1e20;
 }
 
 .dark #audio button input {
@@ -63,6 +76,11 @@ button {
 @media (max-width: 1220px) {
   body {
     padding: 3rem;
+  }
+
+  body::before {
+    position: fixed;
+    height: 200px;
   }
 
   #countdownTimer span {
@@ -84,18 +102,21 @@ button {
 }
 
 @media (max-width: 900px) {
-
   body {
     display: flex;
-    justify-content: center;
     align-items: flex-start;
+    justify-content: center;
+  }
+
+  body::before {
+    position: fixed;
+    height: 100px;
   }
 
   #theme {
     position: absolute;
     top: 2rem;
     right: 2rem;
-
     cursor: pointer;
   }
 

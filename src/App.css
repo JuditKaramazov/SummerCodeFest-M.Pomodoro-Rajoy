@@ -5,19 +5,64 @@
   text-align: center;
 }
 
-#theme {
-  position: absolute;
-  top: 6rem;
-  right: 6rem;
-
-  cursor: pointer;
+#audio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
 }
 
-#countdownTimer {
+#audio button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--bg-audio);
+  border-radius: 2.4rem;
+  gap: 3.2rem;
+  padding: 4.8rem;
+  transition: filter 700ms;
+}
+
+#audio button:hover {
+  filter: opacity(.5);
+}
+
+#audio button.active {
+  background-color: var(--bg-audio-active);
+}
+
+#audio button.active svg path {
+  fill: white;
+}
+
+.dark #audio button input::-webkit-slider-runnable-track {
+  height: .7rem;
   width: 100%;
+  margin: .5rem;
+  background-color: #C4C4CC;
+  border-radius: 2px solid;
+}
+
+.dark #audio button input::-webkit-slider-thumb {
+  margin-top: -.4rem;
+}
+
+.dark button svg path {
+  fill: #C4C4CC;
+}
+
+.dark #audio button {
+  background-color: #29292E;
+}
+
+.dark #audio button.active {
+  background-color: #0A3442;
+}
+
+#countdownTimer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #countdownTimer span {
@@ -33,5 +78,18 @@
 #countdownTimer .stop:hover svg path,
 #countdownTimer .add:hover svg path,
 #countdownTimer .remove:hover svg path {
+  fill: rgb(62, 162, 196);
+}
+
+#theme {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+  cursor: pointer;
+
+}
+
+#theme .light:hover svg path,
+#theme .dark:hover svg path {
   fill: rgb(62, 162, 196);
 }
