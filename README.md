@@ -30,7 +30,7 @@ As for the `playlists` that I decided to incorporate, they belong to [808 INC](h
   <img src="https://github.com/JuditKaramazov/SummerCodeFest-M.Pomodoro-Rajoy/blob/f47816bf1468a2e3e60a9c79ec4d3210c4cddba4/src/assets/Screenshot-3.PNG" alt="Screenshot 3">
 </p>
 
-Please note that while I'm trying my best to improve and explore different technologies, tools and possibilities, there might be some inconsistencies. However, and as it happened with the previous app, I do found it essential to try our best to understand better wathever we are not familiarized with.
+Please note that while I'm trying my best to improve and explore different technologies, tools and possibilities, there might be some inconsistencies. However, and as it happened with the previous app, I do found it essential to try our best to understand better whatever we are not familiarized with.
 If that's also your case and you'd want to give coding a try...
 
 <br />
