@@ -8,4 +8,4 @@ ppAudio.loop = true;
 sunsetAudio.loop = true;
 wavesAudio.loop = true;
 
-export { bunnyAudio, ppAudio, sunsetAudio, wavesAudio }
+export { bunnyAudio, ppAudio, sunsetAudio, wavesAudio };

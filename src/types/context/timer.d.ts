@@ -1,8 +1,8 @@
 export type TimerContextProps = {
-    minutes: number,
-    seconds: number,
-    startCountdown: () => void;
-    stopCountdown: () => void;
-    addMinutes: () => void;
-    removeMinutes: () => void;
-}
+  minutes: number;
+  seconds: number;
+  startCountdown: () => void;
+  stopCountdown: () => void;
+  addMinutes: () => void;
+  removeMinutes: () => void;
+};

@@ -12,7 +12,7 @@ export default function App() {
       <div className="left-container">
         <TimerProvider>
           <Timer />
-        </ TimerProvider>
+        </TimerProvider>
       </div>
       <div className="right-container">
         <div className="top-right">
@@ -22,7 +22,7 @@ export default function App() {
         <div className="bottom-right">
           <AudioProvider>
             <Audio />
-          </ AudioProvider>
+          </AudioProvider>
         </div>
       </div>
     </main>

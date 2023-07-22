@@ -54,15 +54,14 @@
 }
 
 .quote-text {
-  position: relative; 
-  background-image: url("assets/quotation-marks.png");
+  position: relative;
+  background-image: url('assets/quotation-marks.png');
   background-repeat: no-repeat;
   background-size: 3rem;
   background-position: left center;
   font-size: 1.7rem;
   padding: 4rem;
 }
-
 
 #audio {
   display: grid;
@@ -83,7 +82,7 @@
 }
 
 #audio button:hover {
-  filter: opacity(.5);
+  filter: opacity(0.5);
 }
 
 #audio button.active {
@@ -95,27 +94,27 @@
 }
 
 .dark #audio button input::-webkit-slider-runnable-track {
-  height: .7rem;
+  height: 0.7rem;
   width: 100%;
-  margin: .5rem;
-  background-color: #C4C4CC;
+  margin: 0.5rem;
+  background-color: #c4c4cc;
   border-radius: 2px solid;
 }
 
 .dark #audio button input::-webkit-slider-thumb {
-  margin-top: -.4rem;
+  margin-top: -0.4rem;
 }
 
 .dark button svg path {
-  fill: #C4C4CC;
+  fill: #c4c4cc;
 }
 
 .dark #audio button {
-  background-color: #29292E;
+  background-color: #29292e;
 }
 
 .dark #audio button.active {
-  background-color: #0A3442;
+  background-color: #0a3442;
 }
 
 @keyframes heartbeat {
@@ -138,4 +137,3 @@
     transform: scale(0.75);
   }
 }
-

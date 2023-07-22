@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useState, useContext } from 'react';
 import { QuotesContext } from '../../context/QuoteContext';
@@ -17,7 +17,12 @@ const RandomQuoteButton: React.FC = () => {
   return (
     <div id="quotes">
       <button onClick={handleRandomQuoteClick}>
-        <img className="marianoButton" src={marianoButton} style={{ width: '270px', height: '270px' }} alt="Mariano Rajoy visual." />
+        <img
+          className="marianoButton"
+          src={marianoButton}
+          style={{ width: '270px', height: '270px' }}
+          alt="Mariano Rajoy visual."
+        />
       </button>
       {randomQuote.text && <p className="quote-text">{randomQuote.text}</p>}
     </div>

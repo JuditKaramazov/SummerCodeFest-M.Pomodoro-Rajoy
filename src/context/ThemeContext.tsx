@@ -3,16 +3,12 @@ import { ThemeContextProps } from '../types/context/theme';
 
 const ThemeContext = createContext({} as ThemeContextProps);
 
-export function ThemeProvider({
-  children
-}:{
-  children: React.ReactNode
-}) {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [darkThemeIsActive, setDarkThemeIsActive] = useState(false);
   const htmlTag = document.querySelector('html')!;
   const dayThemeButton = document.querySelector('div.light');
   const nightThemeButton = document.querySelector('div.dark');
-  
+
   useEffect(() => {
     if (darkThemeIsActive) {
       htmlTag.className = 'dark';
@@ -25,19 +21,21 @@ export function ThemeProvider({
     }
   }, [darkThemeIsActive]);
 
-  function toggleTheme(){ 
+  function toggleTheme() {
     const changeTheme = !darkThemeIsActive;
     setDarkThemeIsActive(changeTheme);
-    console.log(darkThemeIsActive)
+    console.log(darkThemeIsActive);
   }
 
   return (
-    <ThemeContext.Provider value={{
-      toggleTheme
-    }}>
+    <ThemeContext.Provider
+      value={{
+        toggleTheme,
+      }}
+    >
       {children}
-    </ ThemeContext.Provider>
-  )
+    </ThemeContext.Provider>
+  );
 }
 
 export function useTheme() {

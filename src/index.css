@@ -28,7 +28,7 @@ body {
 }
 
 body::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 350px;
@@ -41,7 +41,7 @@ body::before {
 }
 
 ::selection {
-  color: #333335;;
+  color: #333335;
   background: rgba(62, 163, 196, 0.384);
 }
 
@@ -71,7 +71,6 @@ button {
   appearance: none;
   background: none;
 }
-
 
 @media (max-width: 1220px) {
   body {

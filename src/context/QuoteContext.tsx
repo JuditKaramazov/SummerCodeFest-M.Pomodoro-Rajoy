@@ -11,9 +11,5 @@ export const QuotesContext = createContext<QuotesContextProps>(initialQuotesCont
 export const QuotesProvider: React.FC = ({ children }) => {
   const [quotes] = useState<string[]>(initialQuotesContext.quotes);
 
-  return (
-    <QuotesContext.Provider value={{ quotes }}>
-      {children}
-    </ QuotesContext.Provider>
-  );
+  return <QuotesContext.Provider value={{ quotes }}>{children}</QuotesContext.Provider>;
 };

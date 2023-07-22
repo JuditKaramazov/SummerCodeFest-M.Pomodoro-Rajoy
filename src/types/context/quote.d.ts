@@ -1,3 +1,3 @@
 export type QuotesContextProps = {
-    quotes: string[];
-  };
+  quotes: string[];
+};

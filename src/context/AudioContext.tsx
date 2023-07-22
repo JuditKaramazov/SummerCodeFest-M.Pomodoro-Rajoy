@@ -4,61 +4,79 @@ import { bunnyAudio, ppAudio, sunsetAudio, wavesAudio } from '../assets/sounds/s
 
 const AudioContext = createContext({} as AudioContextProps);
 
-export function AudioProvider({ children } : { children: React.ReactNode }) {
-    const [bunnySongIsPlaying, setBunnySongIsPlaying] = useState<boolean>(false);
-    const [ppSongIsPlaying, setPpSongIsPlaying] = useState<boolean>(false);
-    const [sunsetSongIsPlaying, setSunsetSongIsPlaying] = useState<boolean>(false);
-    const [wavesSongIsPlaying, setWavesSongIsPlaying] = useState<boolean>(false);
+export function AudioProvider({ children }: { children: React.ReactNode }) {
+  const [bunnySongIsPlaying, setBunnySongIsPlaying] = useState<boolean>(false);
+  const [ppSongIsPlaying, setPpSongIsPlaying] = useState<boolean>(false);
+  const [sunsetSongIsPlaying, setSunsetSongIsPlaying] = useState<boolean>(false);
+  const [wavesSongIsPlaying, setWavesSongIsPlaying] = useState<boolean>(false);
 
-    function play(music: string, volume: string) {
-        if (music == 'bunny') {
-            bunnyAudio.play(); setBunnySongIsPlaying(true);
-            bunnyAudio.volume = Number(volume) / 100;
+  function play(music: string, volume: string) {
+    if (music == 'bunny') {
+      bunnyAudio.play();
+      setBunnySongIsPlaying(true);
+      bunnyAudio.volume = Number(volume) / 100;
 
-            ppAudio.pause(); setPpSongIsPlaying(false);
-            sunsetAudio.pause(); setSunsetSongIsPlaying(false);
-            wavesAudio.pause(); setWavesSongIsPlaying(false);
-        } else if (music == 'pp') {
-            ppAudio.play(); setPpSongIsPlaying(true);
-            ppAudio.volume = Number(volume) / 100;
+      ppAudio.pause();
+      setPpSongIsPlaying(false);
+      sunsetAudio.pause();
+      setSunsetSongIsPlaying(false);
+      wavesAudio.pause();
+      setWavesSongIsPlaying(false);
+    } else if (music == 'pp') {
+      ppAudio.play();
+      setPpSongIsPlaying(true);
+      ppAudio.volume = Number(volume) / 100;
 
-            bunnyAudio.pause(); setBunnySongIsPlaying(false);
-            sunsetAudio.pause(); setSunsetSongIsPlaying(false);
-            wavesAudio.pause(); setWavesSongIsPlaying(false);
-        } else if (music == 'sunset') {
-            sunsetAudio.play(); setSunsetSongIsPlaying(true);
-            sunsetAudio.volume = Number(volume) / 100;
+      bunnyAudio.pause();
+      setBunnySongIsPlaying(false);
+      sunsetAudio.pause();
+      setSunsetSongIsPlaying(false);
+      wavesAudio.pause();
+      setWavesSongIsPlaying(false);
+    } else if (music == 'sunset') {
+      sunsetAudio.play();
+      setSunsetSongIsPlaying(true);
+      sunsetAudio.volume = Number(volume) / 100;
 
-            bunnyAudio.pause(); setBunnySongIsPlaying(false);
-            ppAudio.pause(); setPpSongIsPlaying(false);
-            wavesAudio.pause(); setWavesSongIsPlaying(false);
-        } else if (music == 'waves') {
-            wavesAudio.play(); setWavesSongIsPlaying(true);
-            wavesAudio.volume = Number(volume) / 100;
+      bunnyAudio.pause();
+      setBunnySongIsPlaying(false);
+      ppAudio.pause();
+      setPpSongIsPlaying(false);
+      wavesAudio.pause();
+      setWavesSongIsPlaying(false);
+    } else if (music == 'waves') {
+      wavesAudio.play();
+      setWavesSongIsPlaying(true);
+      wavesAudio.volume = Number(volume) / 100;
 
-            bunnyAudio.pause(); setBunnySongIsPlaying(false);
-            ppAudio.pause(); setPpSongIsPlaying(false);
-            sunsetAudio.pause(); setSunsetSongIsPlaying(false);
-        }
+      bunnyAudio.pause();
+      setBunnySongIsPlaying(false);
+      ppAudio.pause();
+      setPpSongIsPlaying(false);
+      sunsetAudio.pause();
+      setSunsetSongIsPlaying(false);
     }
+  }
 
-    return (
-        <AudioContext.Provider value={{
-            play,
-            bunnySongIsPlaying,
-            ppSongIsPlaying,
-            sunsetSongIsPlaying,
-            wavesSongIsPlaying
-        }}>
-            { children }
-        </ AudioContext.Provider>
-    )
+  return (
+    <AudioContext.Provider
+      value={{
+        play,
+        bunnySongIsPlaying,
+        ppSongIsPlaying,
+        sunsetSongIsPlaying,
+        wavesSongIsPlaying,
+      }}
+    >
+      {children}
+    </AudioContext.Provider>
+  );
 }
 
 export function useAudio() {
-    const ctx = useContext(AudioContext);
-    const hasContext = ctx ?? undefined;
+  const ctx = useContext(AudioContext);
+  const hasContext = ctx ?? undefined;
 
-    if (!hasContext) throw new Error('Context not found');
-    return hasContext;
+  if (!hasContext) throw new Error('Context not found');
+  return hasContext;
 }

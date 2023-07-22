@@ -1,11 +1,11 @@
-import { TimerDisplay } from "../client/TimerDisplay";
-import { TimerControllers } from "../client/TimerControllers";
+import { TimerDisplay } from '../client/TimerDisplay';
+import { TimerControllers } from '../client/TimerControllers';
 
 export default function Timer() {
-    return (
-        <div id='countdownTimer'>
-            <TimerDisplay />
-            <TimerControllers />
-        </div>
-    )
+  return (
+    <div id="countdownTimer">
+      <TimerDisplay />
+      <TimerControllers />
+    </div>
+  );
 }
