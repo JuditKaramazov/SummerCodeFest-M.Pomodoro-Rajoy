@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useState } from 'react';
 import type { AudioContextProps } from '../types/context/audio';
-import { bunnyAudio, ppAudio, sunsetAudio, wavesAudio } from '../assets/sounds/sounds';
+
+const bunnyAudio = new Audio('/sounds/bunny.mp3');
+const ppAudio = new Audio('/sounds/pp.mp3');
+const sunsetAudio = new Audio('/sounds/sunset.mp3');
+const wavesAudio = new Audio('/sounds/waves.mp3');
 
 const AudioContext = createContext({} as AudioContextProps);
 
