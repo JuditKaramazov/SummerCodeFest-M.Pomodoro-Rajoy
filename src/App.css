@@ -50,6 +50,7 @@
 }
 
 .marianoButton {
+  margin-top: 10px;
   animation: heartbeat 5s infinite;
 }
 
