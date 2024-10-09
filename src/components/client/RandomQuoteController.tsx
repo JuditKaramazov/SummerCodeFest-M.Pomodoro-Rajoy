@@ -20,7 +20,7 @@ const RandomQuoteButton: React.FC = () => {
         <img
           className="marianoButton"
           src={marianoButton}
-          style={{ width: '270px', height: '270px' }}
+          style={{ width: '210px', height: '210px' }}
           alt="Mariano Rajoy visual."
         />
       </button>

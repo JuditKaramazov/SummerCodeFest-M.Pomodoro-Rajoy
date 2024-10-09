@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -46,7 +46,7 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  padding: 3rem;
+  padding: 1.5rem;
 }
 
 .marianoButton {
@@ -57,10 +57,10 @@
   position: relative;
   background-image: url('assets/quotation-marks.png');
   background-repeat: no-repeat;
-  background-size: 3rem;
+  background-size: 2.3rem;
   background-position: left center;
   font-size: 1.7rem;
-  padding: 4rem;
+  padding: 3rem;
 }
 
 #audio {
@@ -76,8 +76,8 @@
   background-color: var(--bg-audio);
   border: solid rgb(119, 118, 118);
   border-radius: 2.4rem;
-  gap: 2rem;
-  padding: 4.8rem;
+  gap: 1rem;
+  padding: 3rem;
   transition: filter 700ms;
 }
 
@@ -135,5 +135,11 @@
   }
   100% {
     transform: scale(0.75);
+  }
+}
+
+@media (max-width: 900px) {
+  #audio {
+    grid-template-columns: 1fr;
   }
 }
